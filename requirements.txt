@@ -1,4 +1,7 @@
-streamlit
-streamlit-chat
 langchain
-pypdf
+OpenAI
+PyPDF2
+python-dotenv
+streamlit
+faiss-cpu
+streamlit-extras
