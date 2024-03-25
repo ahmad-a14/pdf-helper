@@ -34,9 +34,16 @@ def main():
         # create embeddings
         embeddings = OpenAIEmbeddings()
         knowledge_base = FAISS.from_texts(chunks, embeddings)
+        # show user input
+        with st.chat_message("user"):
+            st.write("Hello World👋")
+        user_question = st.text_input("Please ask a question about your PDF here:")
+        if user_question:
+            docs = knowledge_base.similarity_search(user_question)
 
         llm = OpenAI()
         chain = load_qa_chain(llm, chain_type="stuff")
+
         with get_openai_callback() as cb:
             response = chain.run(input_documents=docs, question=user_question)
             print(cb)
