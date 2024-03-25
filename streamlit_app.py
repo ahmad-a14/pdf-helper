@@ -2,7 +2,7 @@
 import os
 import tempfile
 import streamlit as st
-from streamlit_chat import message
+# from streamlit_chat import message
 from langchain.vectorstores import Chroma
 from langchain.chat_models import ChatOllama
 from langchain.embeddings import FastEmbedEmbeddings
